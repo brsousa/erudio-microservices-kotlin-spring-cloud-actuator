@@ -1,8 +1,20 @@
+info:
+  component: Config Server
 spring:
   application:
     name: erudio-config-server
-  profiles:
-    active:
-      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/brsousa/erudio-microservices-kotlin-spring-cloud-actuator
+          username: usernameRepository
+          password: password or token
+          default-label: master
+          skipSslValidation: true
+          search-paths: config-server-ms-kotlin, /config-server-ms-kotlin/greeting-service
+logging:
+  level:
+    org.springframework.cloud.config.server: DEBUG
 server:
   port: 8888

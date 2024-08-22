@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: greeting-service
+  cloud:
+    config:
+      import-check:
+        enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+server:
+  port: 8080
+greeting-service:
+  greeting: "Hello"
+  default-value: "World"
